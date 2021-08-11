@@ -1,40 +1,30 @@
 import React, { useState } from 'react'
 
-const pregunta = {
-  texto: '¿Qué etiqueta es semánticamente correcta para el contenido principal?',
-  opciones: [
-    'Main',
-    'Section',
-    'Header'
-  ]
-}
 
-const SelectionMultiple = () => {
+const SelectionMultiple = (props) => {
+  
+  const question = props.question;
 
-  const [respuesta, setRespuesta] = useState('')
 
-  function seleccionarRespuesta(ev) {
-    setRespuesta(ev.target.value)
+  const [answer, setAnswer] = useState('')
+
+  function selectOption(ev) {
+    setAnswer(ev.target.value)
   }
 
-  function comprobar() {
-    if (respuesta === pregunta.opciones[0]) {
-      alert('muy bien')
-    } else {
-      alert('intenta otra vez ')
-    }
-    console.log(respuesta)
+  function check() {
+    props.processAnswer(answer === question.options[0]);
   }
 
   return (
     <section>
-      <div className="row">
+       <div className="row">
         <div className="col-4 d-flex justify-content-center m-3">
           <img src="../../multimedia/characters/Property 1=1.png" alt="characters_1" width="70" />
         </div>
         <div className="col-6 align-self-lefts ms-2">
           <p className="mt-5 text-left ps-2">
-            {pregunta.texto}
+            {question.text}
           </p>
         </div>
       </div>
@@ -43,19 +33,19 @@ const SelectionMultiple = () => {
         <div className="container">
           <div className="row">
             {
-              pregunta.opciones.map((opcion) => {
+              question.options.map((option) => {
                 return (
-                  <div key={opcion} className="col-12 d-flex justify-content-center my-2">
+                  <div key={option} className="col-12 d-flex justify-content-center my-2">
                     <span>
                       <input
                         type="radio"
                         name="option"
                         className="radio"
-                        value={opcion}
-                        onChange={seleccionarRespuesta}
+                        value={option}
+                        onChange={selectOption}
                       />
                       <label htmlFor="section" className="option">
-                        <span className="span_title">{opcion}</span>
+                        <span className="span_title">{option}</span>
                         <img src="../../multimedia/recursos/checkbox.png" />
                       </label>
                     </span>
@@ -65,9 +55,9 @@ const SelectionMultiple = () => {
             }
             <div className="col-12 d-flex justify-content-center mt-5">
               <button
-                id="btn-comprobar"
+                id="btn-check"
                 className="btn btn-info col-10"
-                onClick={comprobar}
+                onClick={check}
               >Comprobar</button>
             </div>
           </div>
