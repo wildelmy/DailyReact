@@ -28,8 +28,6 @@ const Login = () => {
         <p>¿Aún no tienes cuenta? <a href="main.html" className="text-success">Inscribirse</a></p>
       </div>
     </div>
-
-    
   )
 }
 export default Login;
