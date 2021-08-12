@@ -1,11 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar.jsx'
-import htmlLogo from '../img/iconos/html.png';
-import cssLogo from '../img/iconos/css.png';
-import jsLogo from '../img/iconos/js.png';
-import figmaLogo from '../img/iconos/figma.png';
-import uxLogo from '../img/iconos/ux.png';
+import img from '../img/img.js';
 
 const Home = () => {
   return (
@@ -15,27 +11,27 @@ const Home = () => {
         <div className="row mt-5">
           <div className="col-12 d-flex justify-content-center">
             <Link to="/cursohtml">
-              <img id="icon_html" src={htmlLogo} alt="icon_html"/>
+              <img id="icon_html" src={img['logo-html']} alt="icon_html"/>
             </Link>
           </div>
           <div className="col-6 d-flex justify-content-center">
             <Link to="/cursohtml">
-              <img id="icon_html" src={cssLogo} alt="icon_css"/>
+              <img id="icon_html" src={img['logo-css']} alt="icon_css"/>
             </Link>
           </div>
           <div className="col-6 d-flex justify-content-center">
             <Link to="/cursohtml">
-              <img id="icon_html" src={jsLogo} alt="icon_js"/>
+              <img id="icon_html" src={img['logo-js']} alt="icon_js"/>
             </Link>
           </div>
           <div className="col-6 d-flex justify-content-center">
             <Link to="/cursohtml">
-              <img id="icon_html" src={figmaLogo} alt="icon_figma"/>
+              <img id="icon_html" src={img['logo-figma']} alt="icon_figma"/>
             </Link>
           </div>
           <div className="col-6 d-flex justify-content-center">
             <Link to="/cursohtml">
-              <img id="icon_html" src={uxLogo} alt="icon_ux"/>
+              <img id="icon_html" src={img['logo-ux']} alt="icon_ux"/>
             </Link>
           </div>
         </div>

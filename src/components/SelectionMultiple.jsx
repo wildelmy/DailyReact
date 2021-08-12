@@ -2,10 +2,7 @@ import React, { useState } from 'react'
 
 
 const SelectionMultiple = (props) => {
-  
   const question = props.question;
-
-
   const [answer, setAnswer] = useState('')
 
   function selectOption(ev) {

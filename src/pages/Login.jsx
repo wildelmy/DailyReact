@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import axios from 'axios';
 import "../style/login.css";
 
 const Login = () => {
+
+  const [email, setEmail] = useState('');
+
+  function onChangeEmail(ev) {
+    console.log(onChangeEmail)
+  }
+  
+
+  function login() {
+
+  }
+
+  https://daily-bits-api.herokuapp.com/user?email=wildelmycolina@gmail.com
   return (
     <div id="container" className="alver container pt-5">
       <div id="loader" className="m-auto"></div>
@@ -25,12 +39,10 @@ const Login = () => {
             <input
               type="email"
               className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
               placeholder="Ingrese su correo electrónico"
             />
           </div>
-          <button className="btn btn-primary btn mx-auto">Ingresar</button>
+          <button className="btn btn-primary btn mx-auto" onClick={login}>Ingresar</button>
         </div>
         <hr />
         <a href="#" className="text-success">
