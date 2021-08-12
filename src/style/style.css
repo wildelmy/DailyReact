@@ -1,0 +1,60 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  background-color: #16161A;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+nav {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding: 15px 0;
+  background-color:  #232E35;;
+}
+nav .icon {
+  max-width: 30px;
+  color: thistle;
+}
+nav .icon img {
+  color: thistle!important;
+  max-width: 30px;
+ 
+}
+
+input[type="radio"] {
+  position: relative;
+  display: none;
+}
+
+input[type=radio] + .option {
+  position: relative;
+  padding: 1px;
+  border-radius: 10px;
+}
+
+input[type=radio]:checked ~ .option {
+  border: 3px solid rgb(129, 241, 106);
+  color:  rgb(129, 241, 106);
+}
+
+.respuestas-posibles {
+  display: flex;
+  align-content: center;
+}
+.span_title {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+}
+.alert {
+  position: fixed !important;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
