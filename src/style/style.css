@@ -24,23 +24,7 @@ nav .icon img {
  
 }
 
-input[type="radio"] {
-  position: relative;
-  display: none;
-}
-
-input[type=radio] + .option {
-  position: relative;
-  padding: 1px;
-  border-radius: 10px;
-}
-
-input[type=radio]:checked ~ .option {
-  border: 3px solid rgb(129, 241, 106);
-  color:  rgb(129, 241, 106);
-}
-
-.respuestas-posibles {
+/* .respuestas-posibles {
   display: flex;
   align-content: center;
 }
@@ -48,7 +32,7 @@ input[type=radio]:checked ~ .option {
   position: absolute;
   top: 25%;
   left: 10%;
-}
+} */
 .alert {
   position: fixed !important;
   left: 50%;
@@ -57,4 +41,34 @@ input[type=radio]:checked ~ .option {
   width: 100%;
   max-width: 600px;
   margin: auto;
+}
+
+span.radio label{
+  max-width: 300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+input[type="radio"] {
+  position: relative;
+  display: none;
+}
+
+input[type=radio] + .option {
+  position: relative;
+  padding: 10px 5px;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+}
+
+input[type=radio]:checked ~ .option {
+  background: paleturquoise;
+  border: 3px solid rgb(129, 241, 106);
+  color:  #000000;
 }

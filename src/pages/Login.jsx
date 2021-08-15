@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import axios from 'axios';
 import "../style/login.css";
+import { UserContext } from "../App";
 
 const Login = () => {
-
+  const user = useContext(UserContext);
+  
+  console.log(user);
+  
   const [email, setEmail] = useState('');
-
+  
   function onChangeEmail(ev) {
     console.log(onChangeEmail)
   }
   
-
+  
   function login() {
-
+    
   }
 
-  https://daily-bits-api.herokuapp.com/user?email=wildelmycolina@gmail.com
   return (
     <div id="container" className="alver container pt-5">
       <div id="loader" className="m-auto"></div>
@@ -59,4 +61,5 @@ const Login = () => {
     </div>
   );
 };
+
 export default Login;

@@ -1,23 +1,25 @@
-import React, { useState } from 'react'
-
+import React, { useState } from 'react';
+import { Juancho } from '../img/img.js';
 
 const SelectionMultiple = (props) => {
   const question = props.question;
-  const [answer, setAnswer] = useState('')
+  const [answerIndex, setAnswerIndex] = useState(null);
 
-  function selectOption(ev) {
-    setAnswer(ev.target.value)
-  }
+  // useEffect(()=> {
+  //   console.log(156)
+  // },[question])
 
   function check() {
-    props.processAnswer(answer === question.options[0]);
+    if (answerIndex !== null) {
+      props.processAnswer(answerIndex === question.correct);
+    }
   }
 
   return (
-    <section>
+    <div>
        <div className="row">
         <div className="col-4 d-flex justify-content-center m-3">
-          <img src="../../multimedia/characters/Property 1=1.png" alt="characters_1" width="70" />
+          <img src={Juancho} alt="characters_1" width="70" />
         </div>
         <div className="col-6 align-self-lefts ms-2">
           <p className="mt-5 text-left ps-2">
@@ -30,21 +32,19 @@ const SelectionMultiple = (props) => {
         <div className="container">
           <div className="row">
             {
-              question.options.map((option) => {
+              question.options.map((option, index) => {
                 return (
-                  <div key={option} className="col-12 d-flex justify-content-center my-2">
-                    <span>
+                  <div key={index} className="col-12 mb-3">
+                    <span className="radio">
                       <input
+                        id={index}
                         type="radio"
                         name="option"
                         className="radio"
-                        value={option}
-                        onChange={selectOption}
+                        value={index}
+                        onChange={() => setAnswerIndex(index)}
                       />
-                      <label htmlFor="section" className="option">
-                        <span className="span_title">{option}</span>
-                        <img src="../../multimedia/recursos/checkbox.png" />
-                      </label>
+                      <label htmlFor={index} className="option">{option}</label>
                     </span>
                   </div>
                 )
@@ -52,7 +52,6 @@ const SelectionMultiple = (props) => {
             }
             <div className="col-12 d-flex justify-content-center mt-5">
               <button
-                id="btn-check"
                 className="btn btn-info col-10"
                 onClick={check}
               >Comprobar</button>
@@ -60,7 +59,7 @@ const SelectionMultiple = (props) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

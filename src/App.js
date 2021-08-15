@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,23 +9,32 @@ import Home from './pages/Home';
 import CursoHtml from './pages/CursoHtml';
 import './style/style.css';
 
+export const UserContext = createContext(null)
+
 const App = () => {
+
+  const user = {
+    email: 'wildelmycolina@gmail.com'
+  }
+
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <Login />
-        </Route>
+    <UserContext.Provider value={user}>
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            <Login />
+          </Route>
 
-        <Route path="/home" exact>
-          <Home />
-        </Route>
+          <Route path="/home" exact>
+            <Home />
+          </Route>
 
-        <Route path="/cursohtml" exact>
-          <CursoHtml />
-        </Route>
-      </Switch>
-    </Router>
+          <Route path="/cursohtml" exact>
+            <CursoHtml />
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   )
 }
 
