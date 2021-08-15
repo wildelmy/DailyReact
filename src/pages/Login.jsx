@@ -1,22 +1,23 @@
-import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
+// { useState, useContext } 
+// import { useHistory } from "react-router-dom";
 import "../style/login.css";
-import { UserContext } from "../App";
+// import { UserContext } from "../App";
 
 const Login = () => {
-  const user = useContext(UserContext);
+  // const user = useContext(UserContext);
   
-  console.log(user);
+  // console.log(user);
   
-  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
   
-  function onChangeEmail(ev) {
-    console.log(onChangeEmail)
-  }
+  // function onChangeEmail(ev) {
+  //   console.log(onChangeEmail)
+  // }
   
   
   function login() {
-    
+    console.log(123456)
   }
 
   return (
@@ -47,7 +48,7 @@ const Login = () => {
           <button className="btn btn-primary btn mx-auto" onClick={login}>Ingresar</button>
         </div>
         <hr />
-        <a href="#" className="text-success">
+        <a href="/" className="text-success">
           ¿Se te olvidó tu contraseña?
         </a>
         <hr />

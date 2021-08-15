@@ -7,9 +7,9 @@ import htmlQuestions from '../questions/htmlQuestions'
 // htmlQuestions.sort(() => Math.random - 0.5)
 const CursoHtml = () => {
   const totalQuestions = htmlQuestions.length;
-  const progressStep = totalQuestions / 100;
+  // const progressStep = totalQuestions / 100;
 
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(0)
   const [life, setLife] = useState(4);
   const [currentQuestion, setCurrentQuestion] = useState(htmlQuestions[0]);
   const [hideAlert, setHideAlert] = useState(true);
@@ -33,6 +33,7 @@ const CursoHtml = () => {
     setHideAlert(true);
     if (nextQuestion < totalQuestions) {
       setCurrentQuestion(htmlQuestions[nextQuestion]);
+      setProgress(50)
     }else {
       alert('Fin de la lección')
     }
