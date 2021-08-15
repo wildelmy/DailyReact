@@ -1,18 +1,18 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const ProgressBar = ({ progress, life }) => {
   return (
     <div className="row">
       <div className="col text-center">
-        <a href="./home">
+        <Link to="/home">
           <i className="fas fa-times"></i>
-        </a>
+        </Link>
       </div>
       <div className="col-8 pt-1 px-0 mx-auto">
-        <div id="progreso" className="progress">
+        <div className="progress">
           <div
             className="progress-bar"
-            // role="progress"
             style={{width: progress+'%'}}
             aria-valuenow={progress}
             aria-valuemin="0"
